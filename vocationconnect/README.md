@@ -1,3 +1,5 @@
+[Live Demo](https://www.doc.gold.ac.uk/usr/260/)
+
 # VocationConnect - Alumni Connection & Mock Interview Platform
 
 A comprehensive web application connecting students with alumni mentors for career guidance and mock interview practice. Built with Node.js, Express, MySQL, and EJS templating.
@@ -38,6 +40,13 @@ A comprehensive web application connecting students with alumni mentors for care
 - Responsive design
 - WebRTC-ready for video communication
 
+### Technical Limitations
+- The email notification flow is not fully implemented and may not deliver messages reliably.
+- Push notifications require additional setup and are not guaranteed in every environment.
+- Video call / WebRTC support is marked as ready but may need extra configuration for production.
+- Authentication and session handling are basic; production deployments should add HTTPS, CSRF protection, and stronger security hardening.
+- Sample user accounts and seeded data are for development/testing only.
+
 ## Project Structure
 
 ```
@@ -45,8 +54,8 @@ vocationconnect/
 ├── index.js                 # Main application file
 ├── package.json             # Dependencies
 ├── .env                     # Environment variables
-├── createdb.sql            # Database schema
-├── insert_test_data.sql    # Sample data
+├── init.sql                # Database schema
+├── seed.sql                # Sample data
 ├── routes/                 # Route handlers
 │   ├── main.js             # Home, about, dashboard
 │   ├── users.js            # Authentication, profiles
@@ -165,6 +174,11 @@ vocationconnect/
 ## Test Accounts
 
 All test accounts use the password: **Test123!@#**
+
+### Test Credentials
+- **Student:** `john_student`
+- **Alumni:** `jane_alumni`
+- **Password:** `Test123!@#`
 
 ### Student Account
 - **Username:** john_student
@@ -316,6 +330,16 @@ This uses nodemon for auto-reload on file changes.
 - Check session secret is set
 - Verify session middleware is loaded
 - Clear expired sessions from database
+
+## Demonstration Flow (Key Feature - Mock Interview)
+1.Login as a student user
+2.Browse the alumni directory
+3.Navigate to the mock interview section
+4.Join the mock interview session
+5. Login as an alumni user
+6.Join the same mock interview session as the alumni user
+7. Observe the successful interview interaction
+
 
 ## Future Enhancements
 
